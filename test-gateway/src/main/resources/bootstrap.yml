@@ -1,0 +1,48 @@
+sys:
+  timeout: 1440
+server:
+  port: 10000
+spring:
+  application:
+    name: test-gateway
+  cloud:
+#注册中心
+    zookeeper:
+      connect-string: zookeeper:2181
+      discovery:
+        register: false
+      config:
+        enabled: true
+        root: /config/test/gateway
+        watcher:
+          enabled: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+      - id: test-service
+        uri: lb://test-service
+        predicates:
+        - Path=/biz/**
+        filters:
+        - StripPrefix=1
+#数据源配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/ecsat_test?useSSL=false
+    username: ecsat
+    password: eternal_2019
+#Redis配置
+  redis:
+    host: redis
+    port: 6379
+    password: eternal_2019
+    database: 0
+    jedis:
+      pool:
+        max-active: 150
+        max-idle: 30
+        min-idle: 10
+        max-wait: 1000

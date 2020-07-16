@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>per.cby.test</groupId>
+		<artifactId>test</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>test-collect</artifactId>
+	<name>test-collect</name>
+	<description>测试项目采集</description>
+	<dependencies>
+        <dependency>
+            <groupId>per.cby.test</groupId>
+            <artifactId>test-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>per.cby.collect</groupId>
+            <artifactId>collect-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>per.cby.collect</groupId>
+            <artifactId>collect-ground-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>per.cby.collect</groupId>
+            <artifactId>collect-satellite-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>per.cby.terminal</groupId>
+            <artifactId>terminal-handle</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>per.cby.collect</groupId> -->
+<!--             <artifactId>collect-beidou</artifactId> -->
+<!--             <version>1.0.0</version> -->
+<!--         </dependency> -->
+        <dependency>
+            <groupId>per.cby.frame</groupId>
+            <artifactId>mqtt-api</artifactId>
+        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>per.cby.collect</groupId> -->
+<!--             <artifactId>collect-socket</artifactId> -->
+<!--             <version>1.0.0</version> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>per.cby.collect</groupId> -->
+<!--             <artifactId>collect-coap</artifactId> -->
+<!--             <version>1.0.0</version> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>per.cby.frame</groupId> -->
+<!--             <artifactId>rabbitmq-api</artifactId> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>per.cby.collect</groupId> -->
+<!-- 	        <artifactId>collect-ecsat</artifactId> -->
+<!-- 	        <version>1.0.0</version> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>per.cby.collect</groupId> -->
+<!--             <artifactId>collect-mqtt</artifactId> -->
+<!--             <version>1.0.0</version> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>per.cby.collect</groupId> -->
+<!--             <artifactId>collect-iridium</artifactId> -->
+<!--             <version>1.0.0</version> -->
+<!--         </dependency> -->
+        <dependency>
+            <groupId>per.cby.collect</groupId>
+            <artifactId>collect-orbcomm</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>per.cby.frame</groupId> -->
+<!--             <artifactId>mongodb-api</artifactId> -->
+<!--         </dependency> -->
+    </dependencies>
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

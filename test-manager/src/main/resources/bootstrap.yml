@@ -1,0 +1,48 @@
+sys:
+  timeout: 1440
+server:
+  port: 10001
+spring:
+  application:
+    name: test-service
+#注册中心
+#  cloud:
+#    zookeeper:
+#      connect-string: zookeeper:2181
+#      discovery:
+#        prefer-ip-address: true
+#      config:
+#        enabled: true
+#        root: /config/test/service
+#        watcher:
+#          enabled: true
+#数据源配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/ecsat_test?useSSL=false
+    username: ecsat
+    password: eternal_2019
+#MongoDB数据库配置
+  data:
+    mongodb:
+      uri: mongodb://test:eternal_2019@mongodb:27017/test
+#Redis配置
+  redis:
+    host: redis
+    port: 6379
+    password: eternal_2019
+    database: 0
+    jedis:
+      pool:
+        max-active: 150
+        max-idle: 30
+        min-idle: 10
+        max-wait: 1000
+#MQTT配置
+  mqtt:
+    serverURIs: tcp://server:1883
+    userName: admin
+    password: eternal_2019
+    clientId: test-collect
+#    clean-session: false
+#    automatic-reconnect: true

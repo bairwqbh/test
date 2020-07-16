@@ -1,0 +1,62 @@
+sys:
+  business:
+    project:
+      id: test
+    socket:
+      idle-time: 30
+spring:
+  application:
+    name: test-collect
+#数据源配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/ecsat_test?useSSL=false
+    username: ecsat
+    password: eternal_2019
+#MongoDB数据库配置
+  data:
+    mongodb:
+      uri: mongodb://admin:eternal_2019@mongodb:27017/admin
+#Redis配置
+  redis:
+    host: redis
+    port: 6379
+    password: eternal_2019
+    database: 0
+    jedis:
+      pool:
+        max-active: 150
+        max-idle: 30
+        min-idle: 10
+        max-wait: 1000
+#ElasticJob配置
+#  elasticjob:
+#    serverlists: zookeeper:2181
+#    namespace: test
+#MQTT配置
+  mqtt:
+    serverURIs: tcp://server:1883
+    userName: ecsat
+    password: eternal_2019
+    clientId: test-collect
+#    clean-session: false
+#    automatic-reconnect: true
+#RabbitMQ配置
+#  rabbitmq:
+#    host: rabbitmq
+#    port: 5672
+#    username: admin
+#    password: eternal_2019
+#    virtual-host: /
+#    publisher-confirms: true
+#    publisher-returns: true
+#    template:
+#      mandatory: true
+#    listener:
+#      simple:
+#        max-concurrency: 8
+
+### Ribbon 配置
+ribbon:
+  connect-timeout: 10000
+  read-timeout: 10000
